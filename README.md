@@ -102,9 +102,9 @@ python -m app.seed            # (опционально) демо-данные
 - **Recommendation** — рекомендация ИИ (категория, заголовок, текст).
 
 Связи:
-- `User 1──∞ Workout` — у пользователя много тренировок.
-- `Workout 1──∞ WorkoutExercise ∞──1 Exercise` — многие-ко-многим
+- `User <──>> Workout` — у пользователя много тренировок.
+- `Workout <──>> WorkoutExercise <<──> Exercise` — многие-ко-многим
   между тренировкой и упражнением с дополнительным полем `order_index`.
-- `WorkoutExercise 1──∞ WorkoutSet` — у каждого упражнения в тренировке
+- `WorkoutExercise <──>> WorkoutSet` — у каждого упражнения в тренировке
   свой список подходов.
-- `User 1──∞ Recommendation`.
+- `User <──>> Recommendation`
