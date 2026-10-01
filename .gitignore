@@ -9,8 +9,15 @@ __pycache__/
 *.py[cod]
 .venv/
 venv/
-backend/.env
-backend/.env.*
+.env
+.env.local
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── Секреты ──────────────────────────────────
+.env
+.env.*
 !.env.example
 
 # IDE / OS
@@ -18,3 +25,4 @@ backend/.env.*
 .vscode/*
 !.vscode/extensions.json
 .DS_Store
+Thumbs.db
