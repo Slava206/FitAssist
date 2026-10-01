@@ -34,7 +34,7 @@
 | `/profile` | Профиль пользователя |
 | `*` | Страница 404 |
 
-## Стек (frontend, этап ЛР №1)
+### Стек (frontend, этап ЛР №1)
 
 - **React 18** + **TypeScript** + **Vite**
 - **React Router v6** — клиентская маршрутизация
@@ -49,7 +49,7 @@
 На этапе ЛР №1 используются **демонстрационные данные** из
 `src/shared/mocks/data.ts`.
 
-## Структура frontend
+### Структура frontend
 
 Структура близка к упрощённому Feature-Sliced Design:
 src/
@@ -60,7 +60,7 @@ src/
 ├─ styles/ # глобальные стили
 └─ ui/ # переиспользуемые компоненты
 
-## Как запускать Front
+### Как запускать Front
 **Установка зависимостей:**
  - npm install
 **Запуск dev-сервера:**
@@ -69,3 +69,42 @@ src/
 **Сборка production-версии:**
  - npm run build
  - npm run preview
+
+## Backend
+
+### Требования
+
+- Python 3.11+
+- PostgreSQL 16 (или Docker Desktop)
+
+### Первичная настройка
+
+```bash
+cd backend
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+Copy-Item .env.example .env
+docker compose up -d          # поднять PostgreSQL
+python -m app.create_tables   # создать таблицы
+python -m app.seed            # (опционально) демо-данные
+```
+
+## Модель данных
+
+Основные сущности:
+
+- **User** — пользователь (email, имя, возраст, рост, вес, цель).
+- **Exercise** — упражнение из каталога (название, группа мышц, инвентарь).
+- **Workout** — тренировка (название, дата, длительность, заметка).
+- **WorkoutExercise** — связка «тренировка ↔ упражнение» с порядком выполнения.
+- **WorkoutSet** — подход (номер, повторения, вес).
+- **Recommendation** — рекомендация ИИ (категория, заголовок, текст).
+
+Связи:
+- `User 1──∞ Workout` — у пользователя много тренировок.
+- `Workout 1──∞ WorkoutExercise ∞──1 Exercise` — многие-ко-многим
+  между тренировкой и упражнением с дополнительным полем `order_index`.
+- `WorkoutExercise 1──∞ WorkoutSet` — у каждого упражнения в тренировке
+  свой список подходов.
+- `User 1──∞ Recommendation`.
