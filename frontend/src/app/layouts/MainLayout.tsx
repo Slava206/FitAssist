@@ -1,7 +1,7 @@
 import { AppShell, Burger, Group, NavLink, Text, Avatar, Menu, UnstyledButton, rem,} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Link, Outlet, useLocation } from 'react-router-dom';
-import { IconHome, IconBarbell, IconList, IconChartLine, IconSparkles, IconUser, IconLogout,} from '@tabler/icons-react';
+import { IconHome, IconBarbell, IconList, IconChartLine, IconSparkles, IconUser, IconLogout, IconRuler,} from '@tabler/icons-react';
 import { ColorSchemeToggle } from '@/shared/ui/ColorSchemeToggle';
 
 const navItems = [
@@ -11,6 +11,7 @@ const navItems = [
   { to: '/progress', label: 'Прогресс', icon: IconChartLine },
   { to: '/recommendations', label: 'Рекомендации ИИ', icon: IconSparkles },
   { to: '/profile', label: 'Профиль', icon: IconUser },
+  { to: '/body-metrics', label: 'Замеры тела', icon: IconRuler },
 ];
 
 export function MainLayout() {

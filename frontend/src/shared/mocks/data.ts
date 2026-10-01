@@ -40,6 +40,24 @@ export type Recommendation = {
   category: RecommendationCategory;
 };
 
+// Метрика тела пользователя, измеряемая в сантиметрах
+export type BodyMetrics = {
+  chest: number;
+  shoulderwidth: number;
+  lowerbust: number;
+  rightbicep: number;
+  leftbicep: number;
+  rightforearm: number;
+  leftforearm: number;
+  waist: number;
+  hip: number;
+  buttocks: number;
+  rightthigh: number;
+  leftthigh: number;
+  rightcalf: number;
+  leftcalf: number;
+};
+
 export const mockExercises: Exercise[] = [
   { id: 'ex-1', name: 'Жим штанги лёжа', muscleGroup: 'Грудь', equipment: 'Штанга', description: 'Базовое упражнение для грудных мышц.' },
   { id: 'ex-2', name: 'Приседания со штангой', muscleGroup: 'Ноги', equipment: 'Штанга', description: 'Базовое упражнение для квадрицепсов и ягодиц.' },
@@ -174,3 +192,20 @@ export const mockRecommendations: Recommendation[] = [
     category: 'Техника',
   },
 ];
+
+export const mockBodyMetrics: BodyMetrics = {
+  chest: 98,
+  shoulderwidth: 45,
+  lowerbust: 92,
+  rightbicep: 32,
+  leftbicep: 31,
+  rightforearm: 26,
+  leftforearm: 25,
+  waist: 80,
+  hip: 95,
+  buttocks: 98,
+  rightthigh: 60,
+  leftthigh: 59,
+  rightcalf: 38,
+  leftcalf: 37,
+}

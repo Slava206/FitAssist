@@ -9,6 +9,7 @@ import { RecommendationsPage } from '@/pages/RecommendationsPage';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { LoginPage } from '@/pages/LoginPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
+import { BodyMetricsPage } from '@/pages/BodyMetrics';
 
 export const router = createBrowserRouter([
   { path: '/login', element: <LoginPage /> },
@@ -22,6 +23,7 @@ export const router = createBrowserRouter([
       { path: 'workouts/:id', element: <WorkoutDetailPage /> },
       { path: 'exercises', element: <ExercisesPage /> },
       { path: 'progress', element: <ProgressPage /> },
+      { path: 'body-metrics', element: <BodyMetricsPage /> },
       { path: 'recommendations', element: <RecommendationsPage /> },
       { path: 'profile', element: <ProfilePage /> },
       { path: '*', element: <NotFoundPage /> },
